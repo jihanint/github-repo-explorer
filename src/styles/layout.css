@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #f6f8fa;
+  color: #24292e;
+}
+
+.page-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.search-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-area input {
+  padding: 0.6rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #0366d6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #0256bd;
+}
+
+.result-label {
+  font-weight: 500;
+  margin: 0.5rem 0 1rem;
+}
+
+.user-section {
+  margin-top: 1rem;
+}
+
+.user-entry {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  background: white;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+.user-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a2b2c;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  position: relative;
+  top: -7px; 
+}
+
+
+
+.repo-list-expanded {
+  padding: 0.5rem 1rem 1rem;
+}
+
+.repo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid #e1e4e8;
+}
+
+.repo-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: #333;
+}
+
+.repo-meta {
+  max-width: 80%;
+}
+
+.repo-meta strong {
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #0969da;
+}
+
+.repo-meta p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #57606a;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #f1c40f;
+}
+
+.error-text {
+  color: #cf222e;
+  margin-top: 0.5rem;
+}
