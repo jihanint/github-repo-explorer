@@ -13,7 +13,7 @@ A simple React + TypeScript app that lets you search for GitHub users and view t
 
 ## Preview
 
-![Preview screenshot](./screenshot.png)
+![App Preview](public/preview.png)
 
 ## Tech Stack
 
