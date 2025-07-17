@@ -12,12 +12,29 @@ function App() {
   const [error, setError] = useState('');
 
   const searchUsers = async (name: string) => {
-    setLoading(true);
+    const cleaned = name.trim();
+    const isValid = /^[a-zA-Z0-9]/.test(cleaned);
+
+    setLastQuery(cleaned);
+    setUsers([]);
     setError('');
-    setLastQuery(name);
+
+    if (!cleaned || !isValid) {
+      setError('Please input a valid username format.');
+      return;
+    }
+
+    setLoading(true);
     try {
-      const result = await fetchUsers(name);
-      setUsers(result);
+      const result = await fetchUsers(cleaned);
+      const filtered = result
+        .filter(user => user.login.toLowerCase().includes(cleaned.toLowerCase()))
+        .slice(0, 5); // Max 5 matches
+      setUsers(filtered);
+
+      if (filtered.length === 0) {
+        setError(`No record found for "${cleaned}"`);
+      }
     } catch {
       setError('Failed to fetch users');
     } finally {
@@ -37,8 +54,10 @@ function App() {
     <div className="page-container">
       <h1>GitHub Repo Finder</h1>
       <SearchBox onSubmit={searchUsers} />
-      {lastQuery && <p className="result-label">Showing users for "{lastQuery}"</p>}
       {error && <p className="error-text">{error}</p>}
+      {!error && users.length > 0 && (
+        <p className="result-label">Showing users for "{lastQuery}"</p>
+      )}
       {loading && <p>Loading...</p>}
       <UserSelect users={users} onExpand={expandRepos} />
     </div>
