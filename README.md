@@ -30,3 +30,16 @@ Clone the repo and install dependencies:
 git clone https://github.com/YOUR_USERNAME/github-repo-explorer.git
 cd github-repo-explorer
 npm install
+
+## Tests
+
+Includes unit and integration tests written with React Testing Library:
+
+- `SearchBox.test.tsx`: tests user input behavior
+- `App.test.tsx`: tests full search flow and GitHub user display
+- `UserSelect.test.tsx`: tests expanding a user to reveal repositories
+
+Run tests with:
+
+```bash
+npm test
