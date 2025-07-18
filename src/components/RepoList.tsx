@@ -9,14 +9,17 @@ export default function RepoList({ repos }: Props) {
     <div className="repo-section">
       {repos.map(item => (
         <div className="repo-card" key={item.id}>
-          <a
-            href={item.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="repo-link"
-          >
-            <h3>{item.name}</h3>
-          </a>
+          <h3>
+            <a
+              href={item.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="repo-link"
+              style={{ color: '#007bff', textDecoration: 'none' }}
+            >
+              {item.name}
+            </a>
+          </h3>
           <p>{item.description || 'No description provided.'}</p>
           <span>⭐ {item.stargazers_count}</span>
         </div>

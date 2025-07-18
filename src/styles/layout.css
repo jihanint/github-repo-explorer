@@ -88,6 +88,9 @@ h1 {
   top: -7px; 
 }
 
+.repo-link:hover {
+  text-decoration: underline;
+}
 
 
 .repo-list-expanded {
