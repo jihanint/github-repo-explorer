@@ -15,7 +15,6 @@ export default function RepoList({ repos }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="repo-link"
-              style={{ color: '#007bff', textDecoration: 'none' }}
             >
               {item.name}
             </a>

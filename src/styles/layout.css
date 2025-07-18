@@ -141,3 +141,15 @@ h1 {
   color: #cf222e;
   margin-top: 0.5rem;
 }
+
+a.repo-link {
+  color: #0366d6;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+}
+
+a.repo-link:hover {
+  text-decoration: underline;
+}
