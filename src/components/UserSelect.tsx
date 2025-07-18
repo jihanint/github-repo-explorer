@@ -25,8 +25,7 @@ export default function UserSelect({ users, onExpand }: Props) {
   const formatStar = (count: number) => {
     if (count >= 1000) return `${(count / 1000).toFixed(1)}k`;
     return count.toString();
- };
-
+  };
 
   return (
     <div className="user-section">
@@ -42,14 +41,21 @@ export default function UserSelect({ users, onExpand }: Props) {
             <div className="repo-list-expanded">
               {repoMap[user.login].map(repo => (
                 <div key={repo.id} className="repo-row">
-                    <div className="repo-meta">
-                        <strong>{repo.name}</strong>
-                        <p>{repo.description || 'No description'}</p>
-                    </div>
-                    <div className="repo-stars">
-                        <span>{formatStar(repo.stargazers_count)}</span>
-                        <span className="star">⭐</span>
-                    </div>
+                  <div className="repo-meta">
+                    <a
+                      href={repo.html_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="repo-link"
+                    >
+                      <strong>{repo.name}</strong>
+                    </a>
+                    <p>{repo.description || 'No description'}</p>
+                  </div>
+                  <div className="repo-stars">
+                    <span>{formatStar(repo.stargazers_count)}</span>
+                    <span className="star">⭐</span>
+                  </div>
                 </div>
               ))}
             </div>
